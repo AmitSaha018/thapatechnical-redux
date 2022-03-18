@@ -3,12 +3,17 @@ const initialState = { counter: 0 };
 const changeTheNumber = (state = initialState, actions) => {
 
     if (actions.type === 'INCREASE') {
-        return state.counter + actions.payload;
+        console.log('increase');
+        return {
+            counter:state.counter + actions.payload
+        };
     }
 
     if (actions.type === 'DECREASE') {
-        return state.counter - 1;
+        console.log('decrease');
+        return {counter:state.counter - 1};
     }
+    return initialState;
 
 }
 
